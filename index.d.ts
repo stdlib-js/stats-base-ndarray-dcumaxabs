@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,24 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the cumulative maximum absolute value of a one-dimensional double-precision floating-point ndarray.
+* Computes the cumulative maximum absolute value of a one-dimensional double-precision floating-point ndarray.
 *
-* @module @stdlib/stats-base-ndarray-dcumaxabs
+* @param arrays - array-like object containing an input ndarray and an output ndarray
+* @returns output ndarray
 *
 * @example
 * var Float64Array = require( '@stdlib/array-float64' );
 * var ndarray2array = require( '@stdlib/ndarray-to-array' );
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var dcumaxabs = require( '@stdlib/stats-base-ndarray-dcumaxabs' );
 *
 * var xbuf = new Float64Array( [ 1.0, 3.0, 4.0, 2.0 ] );
 * var x = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var ybuf = new Float64Array( [ 0.0, 0.0, 0.0, 0.0 ] );
-* var y = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
+* var y = new ndarray( 'float64', ybuf, [ 4 ], [ 1 ], 0, 'row-major' );
 *
 * var v = dcumaxabs( [ x, y ] );
 * // returns <ndarray>
@@ -44,12 +48,9 @@
 * var arr = ndarray2array( v );
 * // returns [ 1.0, 3.0, 4.0, 4.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dcumaxabs( arrays: [ float64ndarray, float64ndarray ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dcumaxabs;
